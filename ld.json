@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora Solar — Placas & Estaciones de Energía",
+  "url": "https://calculadorapowerstations.vercel.app/",
+  "description": "Calculadora interactiva de compatibilidad solar para EcoFlow, Bluetti, Anker SOLIX y VTOMAN. Calcula series, paralelo, autonomía de batería y aprovechamiento al instante.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "es-MX",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
