@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calculadora-powerstations.vercel.app/sitemap.xml
+Sitemap: https://calculadorapowerstations.vercel.app/sitemap.xml
