@@ -3405,20 +3405,25 @@ function wireComparator(){
   if(shareBtn){
     shareBtn.addEventListener('click', ()=>{
       const url = window.location.origin + window.location.pathname + encodeHash();
-      navigator.clipboard.writeText(url).then(()=>{
+      const onCopied = ()=>{
         shareBtn.classList.add('copied');
         shareTxt.textContent = '¡Enlace de comparación copiado!';
         setTimeout(()=>{ shareBtn.classList.remove('copied'); shareTxt.textContent = 'Compartir comparación'; }, 2000);
-      }).catch(()=>{
+      };
+      const fallback = ()=>{
         const tmp = document.createElement('input');
         tmp.value = url;
         document.body.appendChild(tmp);
         tmp.select();
         document.execCommand('copy');
         document.body.removeChild(tmp);
-        shareTxt.textContent = '¡Enlace de comparación copiado!';
-        setTimeout(()=>{ shareTxt.textContent = 'Compartir comparación'; }, 2000);
-      });
+        onCopied();
+      };
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(url).then(onCopied).catch(fallback);
+      } else {
+        fallback();
+      }
     });
   }
 }
